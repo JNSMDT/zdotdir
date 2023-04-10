@@ -1,0 +1,37 @@
+#!/bin/zsh
+#
+#
+
+# single character aliases - be sparing!
+alias _=sudo
+alias l=lsd
+alias g=git
+alias c=clear
+alias n="node $@"
+alias p="python $@"
+
+# "reset" the prompy
+alias cdc="cd && c"
+
+# more ways to ls
+alias ll='lsd -lh'
+alias la='lsd -lAh'
+alias ldot='lsd -ld .*'
+
+# fix common typos
+alias quit='exit'
+alias cd..='cd ..'
+
+# tar
+alias tarls="tar -tvf"
+alias untar="tar -xf"
+
+# find
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+# misc
+alias please=sudo
+alias zshrc='${EDITOR:-code} "${ZDOTDIR:-$HOME}"/.zshrc'
+alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
+alias zdot='cd ${ZDOTDIR:-~}'
