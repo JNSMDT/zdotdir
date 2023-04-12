@@ -21,17 +21,13 @@ export PAGER="${PAGER:-less}"
 # GOLANG
 #
 
-GOLANG_PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
+GOLANG_PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin"
 export GOROOT="$HOME/.gobrew/current/go"
 export GO111MODULE="on"
 
 #
 # PYTHON
 #
-
-PYENV_PATH="$PYENV_ROOT/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init --path)"
 
 #
 # TEXLIVE
@@ -53,8 +49,37 @@ export HOST_GITLAB_HTTPS="https://gitlab.hochschule-stralsund.de"
 export VOLTA_HOME="$HOME/.volta"
 
 #
+# Keybindings
+#
+
+### ctrl+arrows
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+# urxvt
+bindkey "\eOc" forward-word
+bindkey "\eOd" backward-word
+
+### ctrl+delete
+bindkey "\e[3;5~" kill-word
+# urxvt
+bindkey "\e[3^" kill-word
+
+### ctrl+backspace
+bindkey '^H' backward-kill-word
+
+#
 # Paths
 #
+export WROOT="/mnt/c"
+export WHOME="$WROOT/Users/me"
+
+WINDOWS_PATHS=(
+  $WHOME/AppData/Local/Microsoft/WindowsApps
+	"$WHOME/AppData/Local/Programs/Microsoft VS Code/bin"
+	"$WROOT/Program Files/Docker/Docker/resources/bin"
+	$WROOT/ProgramData/DockerDesktop/version-bin
+  "$WROOT/Program Files (x86)/gnupg/bin"
+)
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
@@ -62,13 +87,13 @@ typeset -gU path fpath
 # Set the list of directories that zsh searches for commands.
 path=(
   $HOME/{,s}bin(N)
-  /opt/{homebrew,local}/{,s}bin(N)
+  /opt/local/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $HOME/.local/bin
   $HOME/.cargo/bin
   $VOLTA_HOME/bin
   $GOLANG_PATH
-  $PYENV_PATH
   $TEXLIVE_PATH
+  $WINDOWS_PATHS
   $path
 )

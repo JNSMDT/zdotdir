@@ -6,10 +6,10 @@
 # Case insensitive tab completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-
+zstyle ':autocomplete:*' min-input 2
 #
 # Antidote
 #
 
-# zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/.zplugins.txt
-# zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':antidote:plugin:*' defer-options '-p'
