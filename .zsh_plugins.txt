@@ -32,8 +32,9 @@
 #
 ###
 $ZDOTDIR/.zaliases
-$ZDOTDIR/custom/upgrade
-$ZDOTDIR/custom/utils
+$ZDOTDIR/custom/starship.zsh
+$ZDOTDIR/custom/upgrade.zsh
+$ZDOTDIR/custom/utils.zsh
 
 ### Utilities
 #
@@ -70,8 +71,13 @@ romkatv/zsh-bench kind:path
 #   ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 #
 ####
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:plugins/copybuffer
 ohmyzsh/ohmyzsh path:plugins/copyfile
+ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/magic-enter
+ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 ### Framework: zsh-utils
 #
