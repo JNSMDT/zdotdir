@@ -78,8 +78,8 @@ WINDOWS_PATHS=(
 	"$WHOME/AppData/Local/Programs/Microsoft VS Code/bin"
 	"$WROOT/Program Files/Docker/Docker/resources/bin"
 	"$WROOT/ProgramData/DockerDesktop/version-bin"
-  "$WROOT/Program Files (x86)/gnupg/bin",
-  "$WROOT/Program Files\PowerShell\7"
+  "$WROOT/Program Files (x86)/gnupg/bin"
+  "$WROOT/Program Files/PowerShell/7"
 )
 
 # Ensure path arrays do not contain duplicates.
