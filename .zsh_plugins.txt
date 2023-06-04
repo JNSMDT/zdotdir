@@ -35,6 +35,7 @@ $ZDOTDIR/.zaliases
 $ZDOTDIR/custom/starship.zsh
 $ZDOTDIR/custom/upgrade.zsh
 $ZDOTDIR/custom/utils.zsh
+$ZDOTDIR/custom/check-cert.zsh
 
 ### Utilities
 #
