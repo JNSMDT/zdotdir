@@ -80,6 +80,7 @@ WINDOWS_PATHS=(
 	"$WROOT/ProgramData/DockerDesktop/version-bin"
   "$WROOT/Program Files (x86)/gnupg/bin"
   "$WROOT/Program Files/PowerShell/7"
+  "$WROOT/Windows"
 )
 
 # Ensure path arrays do not contain duplicates.
