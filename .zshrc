@@ -31,6 +31,7 @@ eval "$(pyenv init -)"
 eval "$(zoxide init zsh)"
 
 # load Starship
+export SPACESHIP_HOST_SHOW="always"
 eval "$(starship init zsh)"
 
 # Create an amazing Zsh config using antidote plugins.
