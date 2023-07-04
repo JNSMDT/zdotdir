@@ -1,11 +1,6 @@
 ## Set Tabname to Directory in Starship
 function set_win_title() {
-
-	title="${PWD:t2}"
-	if [[ -$parameters[JSERVERNAME]- = *-export-* ]]; then
-		title="${JSERVERNAME} - ${PWD:t2}"
-	fi
-
+	title="$HOST - ${PWD:t2}"
 	echo -ne "\033]0; "$title" \007"
 }
 
