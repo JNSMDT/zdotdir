@@ -71,7 +71,7 @@ bindkey '^H' backward-kill-word
 # Paths
 #
 export WROOT="/mnt/c"
-export WHOME="$WROOT/Users/me"
+export WHOME="$WROOT/Users/jan"
 
 WINDOWS_PATHS=(
   "$WHOME/AppData/Local/Microsoft/WindowsApps"
