@@ -61,7 +61,6 @@ function __upgrade_go {
 function __upgrade_all {
 	__upgrade_system
 	__upgrade_starship
-	__upgrade_volta
 	__upgrade_volta_tools
 	__upgrade_pyenv
 	__upgrade_rust
