@@ -17,7 +17,7 @@ export EDITOR="${EDITOR:-code}"
 export VISUAL="${VISUAL:-code}"
 export PAGER="${PAGER:-less}"
 
-# 
+#
 # GOLANG
 #
 
@@ -70,17 +70,17 @@ bindkey '^H' backward-kill-word
 #
 # Paths
 #
-export WROOT="/mnt/c"
-export WHOME="$WROOT/Users/jan"
+export WIN_ROOT="/mnt/c"
+export WIN_HOME="$(wslpath "$(wslvar USERPROFILE)")"
 
 WINDOWS_PATHS=(
-  "$WHOME/AppData/Local/Microsoft/WindowsApps"
-	"$WHOME/AppData/Local/Programs/Microsoft VS Code/bin"
-	"$WROOT/Program Files/Docker/Docker/resources/bin"
-	"$WROOT/ProgramData/DockerDesktop/version-bin"
-  "$WROOT/Program Files (x86)/gnupg/bin"
-  "$WROOT/Program Files/PowerShell/7"
-  "$WROOT/Windows"
+  "$WIN_HOME/AppData/Local/Microsoft/WindowsApps"
+	"$WIN_HOME/AppData/Local/Programs/Microsoft VS Code/bin"
+	"$WIN_ROOT/Program Files/Docker/Docker/resources/bin"
+	"$WIN_ROOT/ProgramData/DockerDesktop/version-bin"
+  "$WIN_ROOT/Program Files (x86)/gnupg/bin"
+  "$WIN_ROOT/Program Files/PowerShell/7"
+  "$WIN_ROOT/Windows"
 )
 
 # Ensure path arrays do not contain duplicates.
