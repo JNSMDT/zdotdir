@@ -7,9 +7,10 @@ function set_win_title() {
 		title="${PWD:t}"
 	fi
 
-	# if $WINICON is not set use default icon
-	if [ -z "$WINICON" ]; then
-		WINICON="🖥️"
+	Icon="🖥️"
+	# if $WINICON is set overwrite icon variable
+	if [ -n "$WINICON" ]; then
+		Icon="$WINICON"
 	fi
 
 	echo -ne "\033]0; "$WINICON \| $title" \007"
