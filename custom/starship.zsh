@@ -7,10 +7,12 @@ function set_win_title() {
 		title="${PWD:t}"
 	fi
 
-	# get only upperase letter from $HOST variable
-	HOST=$(echo $HOST | tr -dc '[:upper:]')
+	# if $WINICON is not set use default icon
+	if [ -z "$WINICON" ]; then
+		WINICON="🖥️"
+	fi
 
-	echo -ne "\033]0; "$HOST \| $title" \007"
+	echo -ne "\033]0; "$WINICON \| $title" \007"
 }
 
 precmd_functions+=(set_win_title)
