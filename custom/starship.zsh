@@ -9,7 +9,7 @@ function set_win_title() {
 	fi
 
 	# if i'm not in wsl add hostname to title
-	if [ ! -f /proc/sys/kernel/osrelease ]; then
+	if ! grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null; then
 		title="$title @ $(hostname)"
 	fi
 
