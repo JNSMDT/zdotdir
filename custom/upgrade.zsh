@@ -47,11 +47,6 @@ function __upgrade_pyenv {
 	popd
 }
 
-function __upgrade_rust {
-	echo "\n### Upgrading Rust Toolchain ###\n"
-	rustup update
-}
-
 function __upgrade_go {
 	echo "\n### Upgrading Go ###\n"
 	gobrew self-update
