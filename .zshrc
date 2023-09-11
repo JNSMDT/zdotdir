@@ -14,12 +14,21 @@ autoload -Uz $fpath[1]/*(.:t)
 # Config MagicEnter
 MAGIC_ENTER_OTHER_COMMAND='ll'
 
+# Completion
+
+# bun completions
+[ -s "/home/jan/.bun/_bun" ] && source "/home/jan/.bun/_bun"
+
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
 
 # Clone antidote if necessary.
 [[ -d ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
+
+# load bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # load pyenv
 
