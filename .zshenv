@@ -12,7 +12,6 @@ fi
 #
 # Editors
 #
-
 export EDITOR="${EDITOR:-code}"
 export VISUAL="${VISUAL:-code}"
 export PAGER="${PAGER:-less}"
@@ -28,6 +27,16 @@ export GO111MODULE="on"
 #
 # PYTHON
 #
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+#
+# BUN
+#
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 
 #
 # TEXLIVE
@@ -47,6 +56,11 @@ export HOST_GITLAB_HTTPS="https://gitlab.hochschule-stralsund.de"
 #
 
 export VOLTA_HOME="$HOME/.volta"
+
+#
+# Other Env Variables
+#
+export TAMPLATE_DIR="$HOME/dev/templates"
 
 #
 # Keybindings
