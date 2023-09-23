@@ -38,6 +38,7 @@ function __upgrade_volta_tools {
 	volta install node@lts
 	volta install pnpm@latest
 	volta install npm@latest
+	volta install wrangler@latest
 }
 
 function __upgrade_pyenv {
