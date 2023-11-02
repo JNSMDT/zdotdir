@@ -28,17 +28,13 @@ function __upgrade_system {
 
 # Upgrade stuff
 function __upgrade_starship {
-	echo "\n### Upgrading Starship to Version $latestv ###\n"
+	echo "\n### Upgrading Starship ###\n"
 	curl -sS https://starship.rs/install.sh | sh -s -- -f >/dev/null
 }
 
-function __upgrade_volta_tools {
-	echo "\n### Upgrading Volta ###\n"
-	curl --silent -s https://get.volta.sh | bash
-	volta install node@lts
-	volta install pnpm@latest
-	volta install npm@latest
-	volta install wrangler@latest
+function __upgrade_pnpm {
+	echo "\n### Upgrading PNPM ###\n"
+	curl -fsSL https://get.pnpm.io/install.sh | sh - >/dev/null
 }
 
 function __upgrade_pyenv {
@@ -57,8 +53,6 @@ function __upgrade_go {
 function __upgrade_all {
 	__upgrade_system
 	__upgrade_starship
-	__upgrade_volta_tools
 	__upgrade_pyenv
-	__upgrade_rust
 	__upgrade_go
 }

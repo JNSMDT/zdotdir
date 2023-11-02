@@ -52,10 +52,15 @@ export HOST_GITLAB_SSH="ssh://git@gitlab.hochschule-stralsund.de:2224"
 export HOST_GITLAB_HTTPS="https://gitlab.hochschule-stralsund.de"
 
 #
-# VOLTA
+# PNPM
 #
 
-export VOLTA_HOME="$HOME/.volta"
+export PNPM_HOME="/home/jan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 
 #
 # Other Env Variables
