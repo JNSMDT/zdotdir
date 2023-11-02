@@ -38,3 +38,6 @@ alias zdot='cd ${ZDOTDIR:-~}'
 
 ## windows apps
 alias open=explorer.exe
+
+## pnpx
+alias pnpx='pnpm dlx'
