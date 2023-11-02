@@ -87,21 +87,23 @@ bindkey "\e[3^" kill-word
 bindkey '^H' backward-kill-word
 
 #
-# Paths
+#  Paths
 #
-export WIN_ROOT="/mnt/c"
-export WIN_HOME="$(wslpath "$(wslvar USERPROFILE)")"
+# WSL options
+if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+  export WIN_ROOT="/mnt/c"
+  export WIN_HOME="$(wslpath "$(wslvar USERPROFILE)")"
 
-WINDOWS_PATHS=(
-  "$WIN_HOME/AppData/Local/Microsoft/WindowsApps"
-	"$WIN_HOME/AppData/Local/Programs/Microsoft VS Code/bin"
-	"$WIN_ROOT/Program Files/Docker/Docker/resources/bin"
-	"$WIN_ROOT/ProgramData/DockerDesktop/version-bin"
-  "$WIN_ROOT/Program Files (x86)/gnupg/bin"
-  "$WIN_ROOT/Program Files/PowerShell/7"
-  "$WIN_ROOT/Windows"
-)
-
+  WINDOWS_PATHS=(
+    "$WIN_HOME/AppData/Local/Microsoft/WindowsApps"
+    "$WIN_HOME/AppData/Local/Programs/Microsoft VS Code/bin"
+    "$WIN_ROOT/Program Files/Docker/Docker/resources/bin"
+    "$WIN_ROOT/ProgramData/DockerDesktop/version-bin"
+    "$WIN_ROOT/Program Files (x86)/gnupg/bin"
+    "$WIN_ROOT/Program Files/PowerShell/7"
+    "$WIN_ROOT/Windows"
+  )
+fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
 
