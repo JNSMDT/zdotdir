@@ -1,3 +1,8 @@
+function getLatestVersion() {
+	latest_version=$(curl -s "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name')
+	echo $latest_version
+}
+
 function upgrade {
 	upgrade_functions=()
 	while [ $# -gt 0 ]; do
@@ -29,6 +34,20 @@ function __upgrade_system {
 # Upgrade stuff
 function __upgrade_starship {
 	echo "\n### Upgrading Starship ###\n"
+
+	current_version="v$(starship --version | grep -oP 'starship \K.*')"
+	latest_version=$(getLatestVersion "starship/starship")
+
+	echo "Current version: $current_version"
+	echo "Latest version: $latest_version"
+
+	if [[ $current_version == $latest_version ]]; then
+		echo "Starship is up to date."
+		return 0
+	fi
+
+	echo "Updating Starship to $latest_version"
+
 	curl -sS https://starship.rs/install.sh | sh -s -- -f >/dev/null
 }
 
@@ -42,17 +61,21 @@ function __upgrade_pnpm {
 	fi
 
 	# get latest pnpm version from github
-	latest_pnpm_version=$(curl -s https://api.github.com/repos/pnpm/pnpm/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')
+	latest_version=$(getLatestVersion "pnpm/pnpm")
+	current_version="v$(pnpm --version)"
+
+	echo "Current version: $current_version"
+	echo "Latest version: $latest_version"
 
 	# check if pnpm is up to date
-	if [[ "v$(pnpm --version)" == "$latest_pnpm_version" ]]; then
+	if [[ $current_version == "$latest_version" ]]; then
 		echo "PNPM is up to date."
 		return 0
 	fi
 
 	# update pnpm
-	echo "Updating PNPM to $latest_pnpm_version"
-	archive_url="https://github.com/pnpm/pnpm/releases/download/${latest_pnpm_version}/pnpm-linux-x64"
+	echo "Updating PNPM to $latest_version"
+	archive_url="https://github.com/pnpm/pnpm/releases/download/${latest_version}/pnpm-linux-x64"
 
 	tmp_dir="$(mktemp -d)"
 	trap 'rm -rf "$tmp_dir"' EXIT INT TERM HUP
