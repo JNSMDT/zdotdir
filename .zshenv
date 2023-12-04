@@ -95,12 +95,13 @@ if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
   export WIN_HOME="$(wslpath "$(wslvar USERPROFILE)")"
 
   WINDOWS_PATHS=(
-    "$WIN_HOME/AppData/Local/Microsoft/WindowsApps"
-    "$WIN_HOME/AppData/Local/Programs/Microsoft VS Code/bin"
-    "$WIN_ROOT/Program Files/Docker/Docker/resources/bin"
-    "$WIN_ROOT/ProgramData/DockerDesktop/version-bin"
-    "$WIN_ROOT/Program Files (x86)/gnupg/bin"
-    "$WIN_ROOT/Program Files/PowerShell/7"
+    "$WIN_HOME/AppData/Local/Microsoft/WindowsApps" # Windows Store Apps
+    "$WIN_HOME/AppData/Local/Programs/Microsoft VS Code/bin" # VS Code
+    "$WIN_ROOT/Program Files/Docker/Docker/resources/bin" # Docker
+    "$WIN_ROOT/ProgramData/DockerDesktop/version-bin" # Docker
+    "$WIN_ROOT/Program Files (x86)/gnupg/bin" # GPG
+    "$WIN_ROOT/Program Files/PowerShell/7" # PowerShell
+		"$WIN_ROOT/Program Files/Google/Chrome Beta/Application" # Chrome Beta
     "$WIN_ROOT/Windows"
   )
 fi
