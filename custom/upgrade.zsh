@@ -87,6 +87,33 @@ function __upgrade_pnpm {
 
 }
 
+function __upgrade_node {
+	echo "\n### Upgrading Node ###\n"
+	# check if node is installed at all
+	if ! command -v node &>/dev/null; then
+		echo "Node is not installed. Installing..."
+		pnpm env use --global lts
+		return 0
+	fi
+
+	# get latest node version from github
+	latest_version=$(getLatestVersion "nodejs/node")
+	current_version="$(node --version)"
+
+	echo "Current version: $current_version"
+	echo "Latest version: $latest_version"
+
+	# check if node is up to date
+	if [[ $current_version == "v$latest_version" ]]; then
+		echo "Node is up to date."
+		return 0
+	fi
+
+	# update node
+	echo "Updating Node to $latest_version"
+	pnpm env use --global lts
+}
+
 function __upgrade_pyenv {
 	echo "\n ### Upgrading Pyenv"
 	pushd $(pyenv root)
@@ -104,6 +131,7 @@ function __upgrade_all {
 	__upgrade_system
 	__upgrade_starship
 	__upgrade_pnpm
+	__upgrade_node
 	__upgrade_pyenv
 	__upgrade_go
 }
