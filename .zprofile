@@ -7,7 +7,6 @@
 # Editors
 #
 
-export EDITOR="${EDITOR:-code}"
 export VISUAL="${VISUAL:-code}"
 export PAGER="${PAGER:-less}"
 
