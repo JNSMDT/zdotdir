@@ -83,7 +83,7 @@ function __upgrade_pnpm {
 	curl -fsSL "$archive_url" >"$tmp_dir/pnpm"
 	chmod +x "$tmp_dir/pnpm"
 
-	mv "$tmp_dir/pnpm" "/home/jan/.local/share/pnpm/"
+	mv "$tmp_dir/pnpm" "$HOME/.local/share/pnpm/"
 
 }
 
