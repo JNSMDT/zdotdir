@@ -12,6 +12,14 @@ fi
 
 export PAGER="${PAGER:-less}"
 
+
+#
+# DEVELOPMENT ENVIRONMENT
+#
+
+export DEVDIR="$HOME/dev"
+export TEMPL="$DEVDIR/templates"
+
 #
 # GOLANG
 #
