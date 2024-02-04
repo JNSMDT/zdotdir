@@ -24,7 +24,7 @@ export TEMPL="$DEVDIR/templates"
 # GOLANG
 #
 
-GOLANG_PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin"
+GOLANG_PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$HOME/go/bin"
 export GOROOT="$HOME/.gobrew/current/go"
 export GO111MODULE="on"
 
