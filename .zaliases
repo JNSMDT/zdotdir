@@ -4,7 +4,7 @@
 
 # single character aliases - be sparing!
 alias _=sudo
-alias l=lsd
+alias ls=lsd
 alias g=git
 alias c=clear
 alias n="node $@"
@@ -14,8 +14,9 @@ alias p="python $@"
 alias cdc="cd && c"
 
 # more ways to ls
-alias ll='lsd -lh'
-alias la='lsd -lAh'
+alias ll='ls -lh'
+alias la='ls -lAh'
+alias lt='ls --tree'
 alias ldot='lsd -ld .*'
 
 # fix common typos
