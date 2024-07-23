@@ -35,3 +35,5 @@ eval "$(starship init zsh)"
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+

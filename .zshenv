@@ -4,6 +4,8 @@
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
 export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
+export BROWSER="chrome.exe"
+
 # Use .zprofile for remaining environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
@@ -65,6 +67,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+
+# fnm
+FNM_PATH="/home/jan/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/jan/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 #
 # Other Env Variables
