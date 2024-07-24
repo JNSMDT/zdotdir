@@ -7,7 +7,7 @@ function template {
 		template_name="template-$template_name"
 	fi
 
-	template_path="$HOME/dev/templates/$template_name"
+	template_path="$HOME/dev/templates/$template_name/"
 
 	# check if template_path exists
 	if [ ! -d "$template_path" ]; then
