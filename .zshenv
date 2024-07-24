@@ -69,10 +69,10 @@ esac
 
 
 # fnm
-FNM_PATH="/home/jan/.local/share/fnm"
+FNM_PATH="/home/jan/.fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/jan/.local/share/fnm:$PATH"
-  eval "`fnm env`"
+  export PATH="/home/jan/.fnm:$PATH"
+	eval "$(fnm env --use-on-cd)"
 fi
 
 #
