@@ -92,26 +92,27 @@ function __upgrade_node {
 	# check if node is installed at all
 	if ! command -v node &>/dev/null; then
 		echo "Node is not installed. Installing..."
-		pnpm env use --global lts
+		fnm install --lts
 		return 0
 	fi
 
 	# get latest node version from github
-	latest_version=$(getLatestVersion "nodejs/node")
+	latest_version=$(fnm ls-remote --lts | tail -n 1 | grep -oP 'v\d+\.\d+\.\d+')
 	current_version="$(node --version)"
 
-	echo "Current version: $current_version"
-	echo "Latest version: $latest_version"
+	echo "Current LTS version: $current_version"
+	echo "Latest LTS version: $latest_version"
 
 	# check if node is up to date
-	if [[ $current_version == "v$latest_version" ]]; then
+	if [[ $current_version == "$latest_version" ]]; then
 		echo "Node is up to date."
 		return 0
 	fi
 
 	# update node
 	echo "Updating Node to $latest_version"
-	pnpm env use --global lts
+	fnm install $latest_version
+	fnm use $latest_version
 }
 
 function __upgrade_pyenv {
