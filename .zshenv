@@ -114,7 +114,7 @@ if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
     "$WIN_ROOT/ProgramData/DockerDesktop/version-bin" # Docker
     "$WIN_ROOT/Program Files (x86)/gnupg/bin" # GPG
     "$WIN_ROOT/Program Files/PowerShell/7" # PowerShell
-		"$WIN_ROOT/Program Files/Google/Chrome Beta/Application" # Chrome Beta
+		"$WIN_ROOT/Program Files/Google/Chrome/Application" # Chrome
     "$WIN_ROOT/Windows"
   )
 fi
