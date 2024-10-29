@@ -27,6 +27,7 @@ export TEMPL="$DEVDIR/templates"
 #
 
 GOLANG_PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$HOME/go/bin"
+export PATH="$GOLANG_PATH:$PATH"
 export GOROOT="$HOME/.gobrew/current/go"
 export GO111MODULE="on"
 
@@ -52,11 +53,16 @@ export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 
 #
+# RUST
+#
+export PATH="$HOME/.cargo/bin:$PATH"
+
+#
 # TEXLIVE
 #
 
 TEXLIVE_PATH="/usr/local/texlive/2023/bin/x86_64-linux"
-
+export PATH="$TEXLIVE_PATH:$PATH"
 #
 # GIT (HOST)
 #
@@ -134,9 +140,6 @@ path=(
   /opt/local/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $HOME/.local/bin
-  $HOME/.cargo/bin
-  $VOLTA_HOME/bin
-  $GOLANG_PATH
   $TEXLIVE_PATH
   $WINDOWS_PATHS
   $path
