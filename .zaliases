@@ -43,3 +43,6 @@ alias open=explorer.exe
 ## pnpm
 alias pnpx='pnpm dlx'
 alias penv='pnpm env --global'
+
+## lazydocker
+alias lzd='lazydocker'

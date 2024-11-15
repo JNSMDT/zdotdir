@@ -144,3 +144,4 @@ path=(
   $WINDOWS_PATHS
   $path
 )
+. "$HOME/.cargo/env"
