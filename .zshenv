@@ -88,6 +88,11 @@ if [ -d "$FNM_PATH" ]; then
 	eval "$(fnm env --use-on-cd)"
 fi
 
+
+# turso
+export PATH="$PATH:/home/jan/.turso"
+
+
 #
 # Other Env Variables
 #
