@@ -14,4 +14,4 @@ script_path = Path.cwd()
 
 # Append the new configuration to the gitconfig file
 with git_config.open('a') as f:
-    f.write(f"\n[includeIf \"gitdir:{script_path}\"]\npath = ~/.config/git/gitconfig-jessica\n")
+    f.write(f"\n[includeIf \"gitdir:{script_path}/\"]\npath = ~/.config/git/gitconfig-jessica\n")
