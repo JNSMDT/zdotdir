@@ -32,11 +32,12 @@
 #
 ###
 $ZDOTDIR/.zaliases
-$ZDOTDIR/custom/starship.zsh
-$ZDOTDIR/custom/upgrade.zsh
-$ZDOTDIR/custom/utils.zsh
-$ZDOTDIR/custom/check-cert.zsh
-$ZDOTDIR/custom/template.zsh
+
+$ZDOTDIR/functions/utils.zsh
+$ZDOTDIR/functions/starship.zsh
+$ZDOTDIR/functions/upgrade.zsh
+$ZDOTDIR/functions/template.zsh
+$ZDOTDIR/scripts/scripts.zsh
 
 ### Utilities
 #

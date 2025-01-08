@@ -1,0 +1,1 @@
+alias imJess="python3 $ZDOTDIR/scripts/imJess.py"
