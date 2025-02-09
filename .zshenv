@@ -34,11 +34,11 @@ export GO111MODULE="on"
 #
 # PYTHON
 #
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 #
 # BUN
@@ -55,7 +55,7 @@ export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 
 #
-# RUST
+# RUST + uv
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
