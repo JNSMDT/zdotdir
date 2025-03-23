@@ -1,1 +1,1 @@
-alias imJess="python3 $ZDOTDIR/scripts/imJess.py"
+alias modify_repo_user_jessica="python3 $ZDOTDIR/scripts/imJess.py"
