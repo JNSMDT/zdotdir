@@ -30,13 +30,7 @@ eval "$(direnv hook zsh)"
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
-# pnpm
-export PNPM_HOME="/home/jan/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+
 
 # load Starship
 eval "$(starship init zsh)"

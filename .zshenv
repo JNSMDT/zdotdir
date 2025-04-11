@@ -55,7 +55,7 @@ export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 
 #
-# RUST + uv
+# RUST
 #
 export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"

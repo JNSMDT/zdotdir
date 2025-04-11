@@ -87,6 +87,10 @@ function __upgrade_pnpm {
 
 }
 
+function __upgrade_uv {
+	uv self update
+}
+
 function __upgrade_node {
 	echo "\n### Upgrading Node ###\n"
 	# check if node is installed at all
@@ -115,12 +119,12 @@ function __upgrade_node {
 	fnm use $latest_version
 }
 
-function __upgrade_pyenv {
-	echo "\n ### Upgrading Pyenv"
-	pushd $(pyenv root)
-	git pull --quiet
-	popd
-}
+# function __upgrade_pyenv {
+# 	echo "\n ### Upgrading Pyenv"
+# 	pushd $(pyenv root)
+# 	git pull --quiet
+# 	popd
+# }
 
 function __upgrade_go {
 	echo "\n### Upgrading Go ###\n"
@@ -133,6 +137,6 @@ function __upgrade_all {
 	__upgrade_starship
 	__upgrade_pnpm
 	__upgrade_node
-	__upgrade_pyenv
+	__upgrade_uv
 	__upgrade_go
 }
