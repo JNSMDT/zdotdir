@@ -1,5 +1,5 @@
 function getLatestVersion() {
-	latest_version=$(curl -s "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name')
+	latest_version=$(gh "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name')
 	echo $latest_version
 }
 
@@ -56,7 +56,7 @@ function __upgrade_pnpm {
 	# check if pnpm is installed at all
 	if ! command -v pnpm &>/dev/null; then
 		echo "PNPM is not installed. Installing..."
-		curl -fsSL https://get.pnpm.io/install.sh | sh
+		curl -fsSL https://get.pnpm.io/install.sh | sh -
 		return 0
 	fi
 
