@@ -125,7 +125,7 @@ bindkey '^H' backward-kill-word
 # WSL options
 if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
   export WIN_ROOT="/mnt/c"
-  export WIN_HOME="$(wslpath "$(wslvar USERPROFILE)")"
+  export WIN_HOME="/mnt/c/Users/jan"
 
   WINDOWS_PATHS=(
     "$WIN_HOME/AppData/Local/Microsoft/WindowsApps" # Windows Store Apps
