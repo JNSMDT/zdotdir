@@ -14,8 +14,8 @@ alias p="python $@"
 alias cdc="cd && c"
 
 # more ways to ls
-alias ll='ls -lh'
-alias la='ls -lAh'
+alias ll='ls -lAh'
+alias la='ls -lA'
 alias lt='ls --tree'
 alias ldot='lsd -ld .*'
 
