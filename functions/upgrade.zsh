@@ -1,5 +1,5 @@
 function getLatestVersion() {
-	latest_version=$(gh "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name')
+	latest_version=$(gh api "https://api.github.com/repos/$1/releases/latest" | jq -r '.tag_name')
 	echo $latest_version
 }
 
