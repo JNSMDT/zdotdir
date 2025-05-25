@@ -21,12 +21,6 @@ MAGIC_ENTER_OTHER_COMMAND='ll'
 [[ -d ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
-# load zoxide
-eval "$(zoxide init zsh)"
-
-# load direnv
-eval "$(direnv hook zsh)"
-
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load

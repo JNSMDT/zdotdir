@@ -51,6 +51,41 @@ function __upgrade_starship {
 	curl -sS https://starship.rs/install.sh | sh -s -- -f >/dev/null
 }
 
+
+function __upgrade_direnv {
+	# check if direnv is installed
+
+	if ! command -v direnv &>/dev/null; then
+		echo "Direnv not found, installing from github."
+		install_from_github "direnv/direnv" "$HOME/.local/share/direnv/bin"
+		# make it executable
+		chmod +x "$HOME/.local/share/direnv/bin/direnv"
+		echo "Direnv installed."
+		return 0
+	fi
+
+
+	echo "\n### Upgrading Direnv ###\n"
+	latest_version=$(getLatestVersion "direnv/direnv")
+	current_version=$(direnv --version)
+
+	echo "Current version: $current_version"
+	echo "Latest version: $latest_version"
+	if [[ $current_version == $latest_version ]]; then
+		echo "Direnv is up to date."
+		return 0
+	fi
+
+	echo "Updating Direnv to $latest_version"
+	# get direnv binary path
+	direnv_path=$(which direnv)
+	# download latest direnv binary
+	install_from_github "direnv/direnv" "$direnv_path"
+	# make it executable
+	chmod +x "$direnv_path"
+	echo "Direnv updated to $latest_version"
+}
+
 function __upgrade_pnpm {
 	echo "\n### Upgrading PNPM ###\n"
 	# check if pnpm is installed at all

@@ -41,6 +41,17 @@ export GO111MODULE="on"
 # eval "$(pyenv virtualenv-init -)"
 
 #
+# DIRENV
+#
+export PATH="$PATH:$HOME/.local/share/direnv/bin"
+eval "$(direnv hook zsh)"
+
+#
+# ZOXIDE
+#
+eval "$(zoxide init zsh)"
+
+#
 # BUN
 #
 export BUN_INSTALL="$HOME/.bun"
