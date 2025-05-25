@@ -2,7 +2,6 @@
 #
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
-echo "Loading ZDOTDIR/.zshrc"
 # Zsh options.
 setopt extended_glob
 
