@@ -46,3 +46,7 @@ alias penv='pnpm env --global'
 
 ## lazydocker
 alias lzd='lazydocker'
+
+## code alias
+alias pcode="code --profile Python"
+alias tcode="code --profile Text"
